@@ -3,7 +3,7 @@ name: WakaTime
 on:
   push:
     branches:
-      - master
+      - main
   schedule:
     - cron: '42 7 * * *'
 
