@@ -1,6 +1,13 @@
 ![](https://github-readme-stats.vercel.app/api?username=bafuka)
 
 <!--START_SECTION:waka-->
+```text
+Java   27 hrs 35 mins  ███████████████████▒░░░░░   76.68 % 
+JSON   2 hrs 48 mins   ██░░░░░░░░░░░░░░░░░░░░░░░   07.79 % 
+Bash   2 hrs 27 mins   █▓░░░░░░░░░░░░░░░░░░░░░░░   06.81 % 
+YAML   1 hr 9 mins     ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.23 % 
+XML    57 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.67 % 
+```
 <!--END_SECTION:waka-->
 
 <!--
