@@ -2,7 +2,7 @@
 
 <!--START_SECTION:waka-->
 ```text
-Week: 23 April, 2021 - 30 April, 2021
+Week: 24 April, 2021 - 01 May, 2021
 
 Java     27 hrs 49 mins  ███████████████████░░░░░░   75.88 % 
 JSON     2 hrs 48 mins   ██░░░░░░░░░░░░░░░░░░░░░░░   07.65 % 
