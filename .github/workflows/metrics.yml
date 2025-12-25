@@ -1,10 +1,8 @@
-name: Metrics
+name: Simple Stats
 on:
-  # 每天 0 点更新一次
+  # 每天运行一次，或者手动触发
   schedule: [{cron: "0 0 * * *"}]
-  # 允许手动触发
   workflow_dispatch:
-  # 每次 push 到 master/main 分支时也会触发
   push: {branches: ["master", "main"]}
 
 jobs:
@@ -15,29 +13,17 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # 必须配置 token
           token: ${{ secrets.METRICS_TOKEN }}
-
           # === 核心配置 ===
           user: bafuka
           template: classic
-          base: header, activity, community, repositories, metadata
+          # 只启用 header (头部信息)，它包含头像、Stars、Followers
+          base: header
+          # 隐藏多余的仓库列表等
+          base_indepth: yes 
           config_timezone: Asia/Shanghai
           
-          # === 风格配置 (二次元深色风) ===
-          config_display: large
-          config_padding: 0, 10 + 5%
-          theme: night # 类似 tokyonight 的深色主题
-          
-          # === 额外插件：语言分析 ===
-          plugin_languages: yes
-          plugin_languages_ignored: >-
-            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
-            gnuplot
-          plugin_languages_limit: 8
-          plugin_languages_threshold: 0%
-          
-          # === 额外插件：Star 数和成就 ===
-          plugin_achievements: yes
-          plugin_achievements_display: compact
-          plugin_achievements_threshold: X
+          # === 样式微调 ===
+          # 调整为透明背景或深色背景
+          config_display: regular
+          theme: night 
