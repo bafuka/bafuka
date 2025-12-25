@@ -50,17 +50,6 @@
 <br/>
 
 <div align="center">
-  <!-- 
-     Stats 卡片配置说明:
-     1. hide=issues,prs,contribs -> 隐藏杂项，只保留 Star 和 Commits，突出重点。
-     2. theme=tokyonight -> 深色夜间模式，适合二次元/极客风格。
-     3. show_icons=true -> 显示图标。
-  -->
-  <img src="https://github-readme-stats.vercel.app/api?username=bafuka&show_icons=true&theme=tokyonight&hide_border=true&hide=issues,prs,contribs&count_private=true" height="150" alt="stats graph" />
-  
-  <!-- 
-     Top Langs 卡片配置:
-     layout=compact -> 紧凑模式，不占太宽位置。
-  -->
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bafuka&layout=compact&theme=tokyonight&hide_border=true&langs_count=6" height="150" alt="languages graph" />
+  <!-- 引用自己仓库生成的图片，永远不会挂！ -->
+  <img src="https://github.com/bafuka/bafuka/blob/main/github-metrics.svg" width="100%" alt="Metrics" />
 </div>
