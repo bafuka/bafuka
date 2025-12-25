@@ -1,8 +1,7 @@
-name: Simple Stats
+name: Stats
 on:
-  # 每天运行一次，或者手动触发
-  schedule: [{cron: "0 0 * * *"}]
-  workflow_dispatch:
+  schedule: [{cron: "0 0 * * *"}] # 每天自动更新
+  workflow_dispatch:               # 允许手动触发
   push: {branches: ["master", "main"]}
 
 jobs:
@@ -14,16 +13,23 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          # === 核心配置 ===
+          
+          # === 核心配置：开启 header 和 repositories ===
+          # header: 提供头像、Followers 数据
+          # repositories: 提供 Total Stars 数据 (必须开这个才能算星星！)
+          base: header, repositories
+          
+          # === 关键：只保留数据，隐藏啰嗦的列表 ===
+          # 强制不显示具体的仓库列表，只显示顶部的统计数字
+          plugin_repositories: yes
+          plugin_repositories_featured: "" # 不列出具体项目
+          plugin_repositories_pinned: 0    # 不显示 Pinned
+          plugin_repositories_random: 0    # 不显示随机项目
+          plugin_repositories_order: featured, pinned, starred, random
+          
+          # === 样式配置 ===
           user: bafuka
           template: classic
-          # 只启用 header (头部信息)，它包含头像、Stars、Followers
-          base: header
-          # 隐藏多余的仓库列表等
-          base_indepth: yes 
           config_timezone: Asia/Shanghai
-          
-          # === 样式微调 ===
-          # 调整为透明背景或深色背景
-          config_display: regular
-          theme: night 
+          config_display: large  # 使用宽版显示
+          theme: night           # 夜间模式（二次元极客风）
